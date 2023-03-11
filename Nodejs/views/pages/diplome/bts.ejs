@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%-include('../../partials/head.ejs') %>
+      <title>Deplôme BTS</title>
+      <link rel="stylesheet" href="css/btsbtplang.css">
+      <link rel="stylesheet" href="css/Langue.css">
+   </head>
+   <body>
+      <video autoplay muted loop id="myVideo">
+         <source src="video/Hogwarts_Library.mp4" type="video/mp4">
+      </video>
+      <!-- ===============================Nav Start===================================== -->
+      <%-include('../../partials/nav.ejs') %>
+      <!-- ===============================Nav End===================================== -->
+      <!-- ======================================================================================================= -->
+      <div style="height: 200px;"></div>
+      <!-- ========================================================================================================= -->
+      <!-- Logo image -->
+      <div class="Logo">
+         <h2 class="Textarea" style="margin-top: 50px; font-size: 30px;">
+            <div class="frst-timeline-block frst-even-item" data-animation="slideInUp">
+               <div class="frst-timeline-img"><span>&nbsp;</span></div>
+               <div class="frst-timeline-content">
+                  <div class="frst-timeline-content-inner">
+                     <p class="tarif"><p style="color: #ffac4e;">Pour être admis en BTS: </p>L’apprenant doit être titulaire du diplôme de baccalauréat, d’un diplôme BTP ou d’un diplôme obtenu en équivalence avec étude du dossier.</p>
+                     <p style="opacity: 0%;">...</p>
+                  </div>
+               </div>
+            </div>
+         </h2>
+      </div>
+      
+      <section class="section-what-do container " >
+         <h2 class="titre">Nos spécialités Brevet De Technicien Supérieur (BTS)</h2>
+         <div class="wrapper">
+            <div class="items">
+               <article >
+                  <% for(btss of Informatique) {%>
+                   <% if(btss.type= 'Informatique') {%>
+                     <i class="fa fa-graduation-cap yellow-color" aria-hidden="true"></i>
+                     <h2 ><%- btss.titrebts %></h2>
+                     <ul class="uld">
+                        <li class="lid" ><a href="/bts_developpement">  <%- btss.niveau1 %> </a></li>
+                        <li class="lid" > <a href="/bts_informatique_de_gestion"> <%- btss.niveau2 %></a> </li>
+                        <li class="lid" > <a href="/bts_reseaux_et_securite_informatique"> <%- btss.niveau3 %></a> </li>
+                     </ul>
+                     <% } %>
+                     <% } %>
+               </article>
+
+               <article >
+                  <% for(btss of art) {%>
+                  <% if(btss.type= 'art') {%>
+                     <i class="fa fa-graduation-cap yellow-color" aria-hidden="true"></i>
+                     <h2 ><%- btss.titrebts %></h2>
+                     <ul class="uld">
+                        <li class="lid" >  <a href="/bts_design_despace"><%- btss.niveau1 %></a> </li>
+                        <li class="lid" > <a href="/bts_design_produit"> <%- btss.niveau2 %></a> </li>
+                     </ul>
+                     <% } %>
+                     <% } %>
+
+               </article> 
+               <article >
+                  <% for(btss of Commerce) {%>
+                  <% if(btss.type= 'Commerce') {%>
+                     <i class="fa fa-graduation-cap yellow-color" aria-hidden="true"></i>
+                     <h2 ><%- btss.titrebts %></h2>
+                     <ul class="uld">
+                        <li class="lid" >  <a href="/bts_commerce_international"><%- btss.niveau1 %></a> </li>
+                        <li class="lid" > <a href="/bts_comptabilite_et_finance"> <%- btss.niveau2 %></a> </li>
+                     </ul>
+                     <% } %>
+                     <% } %>
+
+               </article> 
+               <article >
+                  <% for(btss of Audiovisuel) {%>
+                  <% if(btss.type= 'Audiovisuel') {%>
+                     <i class="fa fa-graduation-cap yellow-color" aria-hidden="true"></i>
+                     <h2 ><%- btss.titrebts %></h2>
+                     <ul class="uld">
+                        <li class="lid" >  <a href="/bts_option_assistant_realisateur"><%- btss.niveau1 %></a> </li>
+                        <li class="lid" > <a href="/bts_option_montage_video"> <%- btss.niveau2 %></a> </li>
+                        <li class="lid" >  <a href="/bts_option_prise_de_vue"><%- btss.niveau3 %></a> </li>
+                        <li class="lid" >  <%- btss.niveau4 %> </li>
+                        <li class="lid" >  <%- btss.niveau5 %> </li>
+                     </ul>
+                     <% } %>
+                     <% } %>
+
+               </article>
+            </div>
+         </div>
+                           <!-- ======================================================================================================= -->
+                           <div style="height: 50px;"></div>
+                           <!-- ======================================================================================================= -->         
+         <ul class="nav__list">
+            <li class="nav__list-item">
+               <a class="nav__link nav__link--btn" href="/diplome">retourner</a>
+               <a class="nav__link nav__link--btn" href="/btp">BTP</a>
+            </li>
+         </ul>
+      </section>
+
+                  <!-- ======================================================================================================= -->
+                  <div style="height: 100px;"></div>
+                  <!-- ======================================================================================================= -->
+            
+      <!-- Footer start -->
+      <%-include('../../partials/footer.ejs') %>
+      <!-- Footer End -->
+      <%-include('../../partials/scripte.ejs') %>
+   </body>
+</html>

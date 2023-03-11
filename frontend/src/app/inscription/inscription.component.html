@@ -1,0 +1,19 @@
+<div class="body" >
+	<div class="main">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="" [(ngModel)]="user.username">
+					<input type="email" name="email" placeholder="Email" required="" [(ngModel)]="user.email">
+
+          <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="user.password">
+					<input type="password" name="pswd" placeholder="Confirm Password" required="" [(ngModel)]="user.passwordConf">
+					<button (click)="SignUp()">Sign up</button>
+				</form>
+			</div>
+
+
+	</div>
+</div>
+<flash-messages></flash-messages>
